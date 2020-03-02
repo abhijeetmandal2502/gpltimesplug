@@ -34,7 +34,7 @@ Copyright 2005-2015 Automattic, Inc.
 // If this file is called firectly, abort!!!
 defined( 'ABSPATH' ) or die( 'Hey, what are you doing here? You silly human!' );
 
-define('WP_CACHE', 'false');
+
 
 
 // Require once the Composer Autoload

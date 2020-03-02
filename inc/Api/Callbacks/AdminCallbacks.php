@@ -35,18 +35,49 @@ class AdminCallbacks extends BaseController
 
 	public function alecadddAdminSection()
 	{
-		echo 'Gpl Update settings';
+		echo 'Gpl Update settings! Enter Your GPltimes username password';
+		
 	}
 
 	public function alecadddTextExample()
 	{
 		$value = esc_attr( get_option( 'text_example' ) );
-		echo '<input type="text" class="regular-text" name="text_example" value="' . $value . '" placeholder="Write Something Here!">';
+		echo '<input type="text" class="regular-text" name="text_example" value="' . $value . '" placeholder="username of Gpltimes!">';
 	}
 
 	public function alecadddFirstName()
 	{
 		$value = esc_attr( get_option( 'first_name' ) );
-		echo '<input type="text" class="regular-text" name="first_name" value="' . $value . '" placeholder="password">';
+		echo '<input type="password" class="regular-text" name="first_name" value="' . $value . '" placeholder="password">';
+	}
+
+	public function gplsubscription(){
+		$main_url = 'https://gpl.wptemp.site/wp-json/jwt-auth/v1/token';
+		$received_values = array();
+		$received_values['username'] = esc_attr( get_option( 'text_example' ) );;
+		$received_values['password'] = esc_attr( get_option( 'first_name' ) );
+		$received_values += stripslashes_deep($_POST);
+		$options = array('timeout' => 20, 'body' => $received_values,);
+		$response = wp_remote_retrieve_body(wp_safe_remote_post($main_url, $options));
+   
+		$response_decode = json_decode($response);
+
+		$tokengpltime = $response_decode->token;
+
+		
+
+			if($tokengpltime != ''){
+
+			echo	$gplpackage = '<div class="gplmyplugactive">Active</div>';
+
+			update_option('gplstatus', $tokengpltime);
+
+			}
+				else{
+
+			echo	$gplpackage = '<div class="gplmyplugnotactive">Not Active</div>';
+				}
+
+
 	}
 }

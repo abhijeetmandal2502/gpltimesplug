@@ -119,7 +119,7 @@ class Admin extends BaseController
 		$args = array(
 			array(
 				'id' => 'text_example',
-				'title' => 'Email',
+				'title' => 'User Name',
 				'callback' => array( $this->callbacks, 'alecadddTextExample' ),
 				'page' => 'alecaddd_plugin',
 				'section' => 'alecaddd_admin_index',
@@ -130,15 +130,27 @@ class Admin extends BaseController
 			),
 			array(
 				'id' => 'first_name',
-				'title' => 'Api Key',
+				'title' => 'Password',
 				'callback' => array( $this->callbacks, 'alecadddFirstName' ),
 				'page' => 'alecaddd_plugin',
 				'section' => 'alecaddd_admin_index',
 				'args' => array(
 					'label_for' => 'first_name',
 					'class' => 'example-class'
+					)
+				),
+			array(
+				'id' => 'gplstatus',
+				'title' => 'Status',
+				'callback' => array( $this->callbacks, 'gplsubscription' ),
+				'page' => 'alecaddd_plugin',
+				'section' => 'alecaddd_admin_index',
+				'args' => array(
+					'label_for' => 'gplstatus',
+					'class' => 'gplmystatus'
 				)
-			)
+			),	
+
 		);
 
 		$this->settings->setFields( $args );

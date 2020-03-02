@@ -18,7 +18,7 @@ final class Init
 			Pages\Admin::class,
 			Base\Enqueue::class,
 			Base\SettingsLinks::class,
-			Plugupdate\Plugupdate::class
+			Plugupdate\Plugcheck::class
 		];
 	}
 
