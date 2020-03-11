@@ -25,6 +25,8 @@
 
 		<div id="tab-3" class="tab-pane">
 			<h3>About</h3>
+
+			<?php echo $last_active_time = get_user_meta(get_current_user_id(),'last_active_time',true); ?>
 		</div>
 	</div>
 </div>

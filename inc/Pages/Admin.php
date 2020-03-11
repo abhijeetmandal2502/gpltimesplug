@@ -56,30 +56,30 @@ class Admin extends BaseController
 	public function setSubpages()
 	{
 		$this->subpages = array(
-			array(
-				'parent_slug' => 'alecaddd_plugin', 
-				'page_title' => 'Custom Post Types', 
-				'menu_title' => 'CPT', 
-				'capability' => 'manage_options', 
-				'menu_slug' => 'alecaddd_cpt', 
-				'callback' => array( $this->callbacks, 'adminCpt' )
-			),
-			array(
-				'parent_slug' => 'alecaddd_plugin', 
-				'page_title' => 'Custom Taxonomies', 
-				'menu_title' => 'Taxonomies', 
-				'capability' => 'manage_options', 
-				'menu_slug' => 'alecaddd_taxonomies', 
-				'callback' => array( $this->callbacks, 'adminTaxonomy' )
-			),
-			array(
-				'parent_slug' => 'alecaddd_plugin', 
-				'page_title' => 'Custom Widgets', 
-				'menu_title' => 'Widgets', 
-				'capability' => 'manage_options', 
-				'menu_slug' => 'alecaddd_widgets', 
-				'callback' => array( $this->callbacks, 'adminWidget' )
-			)
+			// array(
+			// 	'parent_slug' => 'alecaddd_plugin', 
+			// 	'page_title' => 'Custom Post Types', 
+			// 	'menu_title' => 'CPT', 
+			// 	'capability' => 'manage_options', 
+			// 	'menu_slug' => 'alecaddd_cpt', 
+			// 	'callback' => array( $this->callbacks, 'adminCpt' )
+			// ),
+			// array(
+			// 	'parent_slug' => 'alecaddd_plugin', 
+			// 	'page_title' => 'Custom Taxonomies', 
+			// 	'menu_title' => 'Taxonomies', 
+			// 	'capability' => 'manage_options', 
+			// 	'menu_slug' => 'alecaddd_taxonomies', 
+			// 	'callback' => array( $this->callbacks, 'adminTaxonomy' )
+			// ),
+			// array(
+			// 	'parent_slug' => 'alecaddd_plugin', 
+			// 	'page_title' => 'Custom Widgets', 
+			// 	'menu_title' => 'Widgets', 
+			// 	'capability' => 'manage_options', 
+			// 	'menu_slug' => 'alecaddd_widgets', 
+			// 	'callback' => array( $this->callbacks, 'adminWidget' )
+			// )
 		);
 	}
 

@@ -1,5 +1,33 @@
 <h1>Update Manager</h1>
 <?php
+
+
+$data = $returndata = get_option( 'gplupdatepackage' );
+
+print_r($data);
+
+//  echo $current_time = date('H:i:s');
+
+// $endTime = strtotime("+10 minutes", strtotime($current_time));
+//  $finaltime = date('H:i:s', $endTime);
+
+//     update_option( 'gpltimestatus', $current_time, true );
+//     $data = get_option( 'gpltimestatus' );
+
+// $valuegpl = get_option( 'gplslugdetails' );
+
+// print_r($value);
+
+// foreach ($valuegpl as $key => $value) {
+
+//   echo $value;
+//   echo '<br>';
+//   # code...
+// }
+// update_user_meta(get_current_user_id(),'last_active_time','16:47:56');
+  // $last_active_time = get_user_meta(get_current_user_id(),'last_active_time',true); 
+
+  // print_r($last_active_time);
 	
 	// $username = esc_attr( get_option( 'text_example' ) );
 	// $password = esc_attr( get_option( 'first_name' ) );
@@ -23,9 +51,9 @@
 
      // print_r($package_status);
 
-     $all_plugins = get_plugins();
+    //  $all_plugins = get_plugins();
 
-     print_r($all_plugins);
+    //  print_r($all_plugins);
 
 
 

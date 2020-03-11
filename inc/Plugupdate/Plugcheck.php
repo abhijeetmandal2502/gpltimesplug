@@ -5,74 +5,106 @@
 namespace Inc\Plugupdate;
 
 use Inc\Plugupdate\Plugupdate;
+use Inc\Plugupdate\Plugtimecheck;
 
 class Plugcheck  {
 
     function __construct(){
 
-       $pathget =  plugin_dir_path( dirname( __FILE__, 5 ) );
+      $gpltimestatus = new Plugtimecheck();
 
-         require_once($pathget.'wp-admin/includes/plugin.php');
+      $timediffcheck = $gpltimestatus->returntimegpl;
+      $returnslugarray = [];
+
+      if($timediffcheck){
+
+          $pathget =  plugin_dir_path( dirname( __FILE__, 5 ) );
+
+          require_once($pathget.'wp-admin/includes/plugin.php');
 
           $all_plugins = get_plugins();
 
           
+          $slugarray = [];
+          $slugdetails = [];
+          $object = new \stdClass();
+            foreach ($all_plugins as $key => $value){ 
 
+                $plugslug = $key;
+                $plugversion  = $value['Version'];
+                
+                $meta_value = $plugslug.'|'.$plugversion;
 
-        $slugarray = [];
-        $object = new \stdClass();
-        foreach ($all_plugins as $key => $value)
-        {
+                array_push($slugarray,$meta_value);
+                array_push($slugdetails,$plugslug);
+
+            }
         
+            $token = esc_attr( get_option( 'gplstatus' ) );
+            $out = implode(",",$slugarray);
+            $out_final = $out.'@__@'.$token;
+            $out_encode = base64_encode($out_final);
 
-            $plugslug = $key;
-            $plugversion  = $value['Version'];
+            $url = 'https://gpl.wptemp.site/version_check.php?data='.$out_encode;
+            $option =  array('timeout' => 30,);
+            $dataAPIResult = wp_remote_retrieve_body( wp_safe_remote_get( $url, $option ) );
+
+            $returndataendpoint = json_decode($dataAPIResult);
+
+            update_option( 'packagereturndata', $returndataendpoint );
+
+
+            $returndata = get_option( 'packagereturndata' );
+
+
+        
+            $returncount = ($dataAPIResult != '') ?  $returncount = count($returndata) :  $returncount = 0;
 
             
 
-            $meta_value = $plugslug.'|'.$plugversion;
+              for($i=0;$i<$returncount;$i++){
 
-            array_push($slugarray,$meta_value);
+                $returnslug = $returndata[$i]->slug;
+                $getversionapi = $returndata[$i]->version;
+                $currentplugindata =  $all_plugins[$returnslug];
 
-        }
-        
-        $token = esc_attr( get_option( 'gplstatus' ) );
-        $out = implode(",",$slugarray);
-        $out_final = $out.'@__@'.$token;
-        $out_encode = base64_encode($out_final);
+                $currentversion = $currentplugindata['Version'];
 
-        $url = 'https://gpl.wptemp.site/version_check.php?data='.$out_encode;
-        $option =  array('timeout' => 30,);
-        $dataAPIResult = wp_remote_retrieve_body( wp_safe_remote_get( $url, $option ) );
+                $clgplplugpackage = get_option( 'gplpluginlistslug' );
 
-        $returndata = json_decode($dataAPIResult);
-      //  / $test = ($dataAPIResult != '') ?  $returncount = count($returndata) :  $returncount = 0;
-        $returncount = ($dataAPIResult != '') ?  $returncount = count($returndata) :  $returncount = 0;
+                if (!in_array($returnslug , $clgplplugpackage)){
 
-            for($i=0;$i<$returncount;$i++){
+                  array_push($clgplplugpackage, $returnslug);
 
-              $returnslug = $returndata[$i]->slug;
-              $getversionapi = $returndata[$i]->version;
-              $currentplugindata =  $all_plugins[$returnslug];
+                }
+                
+                array_push($returnslugarray,$returnslug);
 
-              $currentversion = $currentplugindata['Version'];
+                      $dataclass =  new \stdClass();
+                      $dataclass->slug = $returndata[$i]->slug;
+                      $dataclass->version = $returndata[$i]->version;
+                      $dataclass->name = $currentplugindata['Name'];
+                      $dataclass->author = $currentplugindata['Author'];
+                      $dataclass->pluginuri = $returndata[$i]->pluginuri;
+                      $dataclass->package = $returndata[$i]->download_link;
+                      $dataclass->lastupdate = $returndata[$i]->last_update;
 
-              $dataclass =  new \stdClass();
-              $dataclass->slug = $returndata[$i]->slug;
-              $dataclass->version = $returndata[$i]->version;
-              $dataclass->name = $currentplugindata['Name'];
-              $dataclass->author = $currentplugindata['Author'];
-              $dataclass->pluginuri = $currentplugindata['PluginURI'];
+                if (version_compare($getversionapi,$currentversion, '>')){
 
-              if (version_compare($getversionapi,$currentversion, '>=')){
+                  $draft = new Plugupdate($dataclass);
 
-                $draft = new Plugupdate($dataclass);
-
+                }
+            
               }
-          
-            }
-       
 
+                  
+                  $clgplplugpackage = get_option( 'gplpluginlistslug' );
+
+                  $diffslug =array_diff($clgplplugpackage,$returnslugarray);
+
+                  update_option('gplslugdetails', $diffslug);
+       
+        }   
     }
 }
 

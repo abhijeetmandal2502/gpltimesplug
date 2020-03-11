@@ -32,6 +32,8 @@ Copyright 2005-2015 Automattic, Inc.
 */
 
 // If this file is called firectly, abort!!!
+
+
 defined( 'ABSPATH' ) or die( 'Hey, what are you doing here? You silly human!' );
 
 
@@ -47,6 +49,14 @@ if ( file_exists( dirname( __FILE__ ) . '/vendor/autoload.php' ) ) {
  */
 function activate_alecaddd_plugin() {
 	Inc\Base\Activate::activate();
+	$current_time = date('H:i:s');
+	$endTime = strtotime("+9 minutes", strtotime($current_time));
+	$finaltime = date('H:i:s', $endTime);
+	$gplplugslug = [];
+
+	update_option( 'gpltimestatus', $finaltime, true );
+	update_option( 'gplpluginlistslug', $gplplugslug, true );
+	flush_rewrite_rules();
 }
 register_activation_hook( __FILE__, 'activate_alecaddd_plugin' );
 
@@ -63,86 +73,48 @@ register_deactivation_hook( __FILE__, 'deactivate_alecaddd_plugin' );
  */
 if ( class_exists( 'Inc\\Init' ) ) {
 	Inc\Init::register_services();
+	
 }
 
+$valuegpl = get_option( 'gplslugdetails' );
 
-// function disable_plugin_updates( $value ) {
-//   if ( isset($value) && is_object($value) ) {
-//     if ( isset( $value->response['woocommerce-follow-up-emails/woocommerce-follow-up-emails.php'] ) ) {
-//       unset( $value->response['woocommerce-follow-up-emails/woocommerce-follow-up-emails.php'] );
-//     }
-//   }
-//   return $value;
+
+
+function disable_plugin_updates( $valuegpl ) {
+
+	foreach ($valuegpl as $key => $value) {
+
+		if ( isset($valuegpl) && is_object($valuegpl) ) {
+			if ( isset( $valuegpl->response[$value] ) ) {
+			  unset( $valuegpl->response[$value] );
+			}
+		  }
+		  return $valuegpl;
+	 }
+
+}
+add_filter( 'site_transient_update_plugins', 'disable_plugin_updates' );
+
+
+
+
+   
+// function cron_add_minute( $schedules ) {
+// 	// Adds once every minute to the existing schedules.
+//     $schedules['everyminute'] = array(
+// 	    'interval' => 60,
+// 	    'display' => __( 'Once Every Minute' )
+//     );
+//     return $schedules;
 // }
-// add_filter( 'site_transient_update_plugins', 'disable_plugin_updates' );
+// add_filter( 'cron_schedules', 'cron_add_minute' );
 
 
-// if ( is_admin() ) {
-//     new Plugupdate();
+// function cronstarter_activation() {
+// 	if( !wp_next_scheduled( 'mycronjob' ) ) {  
+// 	   wp_schedule_event( time(), 'everyminute', 'mycronjob' );  
+// 	}
 // }
+// // and make sure it's called whenever WordPress loads
+// add_action('wp', 'cronstarter_activation');
 
-// class Plugupdate{
-
-// 	function __construct(){
-// 	add_filter( "pre_set_site_transient_update_plugins", array( $this, "setTransitent" ) );
-
-
-
-// add_filter( "plugins_api", array( $this, "setPluginInfo" ), 10, 3 );
-
-// }
-
-	
-// 	public function setTransitent( $transient ) {
-//         // If we have checked the plugin data before, don't re-check
-//         if ( empty( $transient->checked ) ) {
-//             return $transient;
-//         }
-
-
-        
-    
-//             $package = 'http://localhost/wooserver/plugin/new/woocommerce-follow-up-emails.zip';
-
-            
-
-//             $obj = new stdClass();
-//             $obj->slug = 'woocommerce-follow-up-emails/woocommerce-follow-up-emails.php';
-//             $obj->new_version = '4.8.23';
-//             $obj->url = 'https://woocommerce.com/products/follow-up-emails/';
-//             $obj->package = $package;
-//             $transient->response['woocommerce-follow-up-emails/woocommerce-follow-up-emails.php'] = $obj;
-        
-
-//         return $transient;
-//     }
-
-
-//   public   function setPluginInfo( $false, $action, $response ) {
-
-
-
-//         if ( empty( $response->slug ) || $response->slug != $this->slug ) {
-//             return false;
-//         }
-
-//         // Add our plugin information
-//         $response->last_updated = '12-12-2020';
-//         $response->slug = 'woocommerce-follow-up-emails/woocommerce-follow-up-emails.php';
-//         $response->plugin_name  = 'Follow-Up Emails';
-//         $response->version = '4.8.23';
-//         $response->author = 'WooCommerce';
-//         $response->homepage = 'https://woocommerce.com/products/follow-up-emails/';
-
-//         // This is our release download zip file
-//         $downloadLink = 'http://localhost/wooserver/plugin/new/woocommerce-follow-up-emails.zip';
-
-//         // Include the access token for private GitHub repos
-       
-//         $response->download_link = $downloadLink;
-
-
-//         return $response;
-//     }
-
-// }

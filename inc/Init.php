@@ -12,13 +12,15 @@ final class Init
 	 * Store all the classes inside an array
 	 * @return array Full list of classes
 	 */
+	
 	public static function get_services() 
 	{
 		return [
 			Pages\Admin::class,
 			Base\Enqueue::class,
 			Base\SettingsLinks::class,
-			Plugupdate\Plugcheck::class
+			Plugupdate\Plugcheck::class,
+			Plugupdate\Plugtimecheck::class
 		];
 	}
 
@@ -28,17 +30,6 @@ final class Init
 	 * @return
 	 */
 
-	public static function gpltimes_update(){
-
-		
-
-		// if ( is_admin() ) {
-
-		// 	$data = Plugupdate\Plugupdate::class;
-
-		// 	print_r($data);
-		// }
-	}
 	public static function register_services() 
 	{
 		foreach ( self::get_services() as $class ) {
