@@ -53,19 +53,22 @@ class Plugcheck  {
 
             update_option( 'packagereturndata', $returndataendpoint );
 
-
+          }
             $returndata = get_option( 'packagereturndata' );
 
-
+          
         
-            $returncount = ($dataAPIResult != '') ?  $returncount = count($returndata) :  $returncount = 0;
+            $returncount = (!empty($returndata) ) ?  $returncount = count($returndata) :  $returncount = 0;
 
             
 
               for($i=0;$i<$returncount;$i++){
 
+                
+
                 $returnslug = $returndata[$i]->slug;
                 $getversionapi = $returndata[$i]->version;
+                
                 $currentplugindata =  $all_plugins[$returnslug];
 
                 $currentversion = $currentplugindata['Version'];
@@ -104,7 +107,7 @@ class Plugcheck  {
 
                   update_option('gplslugdetails', $diffslug);
        
-        }   
+      //  }   
     }
 }
 
