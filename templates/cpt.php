@@ -1,10 +1,33 @@
-<h1>Update Manager</h1>
+<div class="wrap">
+	<h1>Gpltimes</h1>
+	<?php settings_errors(); ?>
+<h1>Deactive Plugin</h1>
+
+<form method="get" action="">
+<input type="hidden"  name="page" value="alecaddd_cpt">
+<input type="hidden"  name="deactive" value="deactive">
+<input type="submit" value="Deactive" name="deactive">
+			</form>
+      </div>
 <?php
 
+if(isset($_GET['deactive'])){
+  //echo $_GET['deactive'];
 
-$data = $returndata = get_option( 'gplupdatepackage' );
+  $username = get_option( 'text_example' );
+  $password = get_option( 'first_name' );
 
-print_r($data);
+    if( $username !='' && $password !=''){
+      update_option( 'text_example', '' );
+      update_option( 'first_name', '' );
+      update_option('gplstatus', '');
+    }
+
+}
+
+// $data = $returndata = get_option( 'gplupdatepackage' );
+
+// print_r($data);
 
 //  echo $current_time = date('H:i:s');
 

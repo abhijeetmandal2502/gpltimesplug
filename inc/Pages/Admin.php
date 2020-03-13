@@ -56,14 +56,14 @@ class Admin extends BaseController
 	public function setSubpages()
 	{
 		$this->subpages = array(
-			// array(
-			// 	'parent_slug' => 'alecaddd_plugin', 
-			// 	'page_title' => 'Custom Post Types', 
-			// 	'menu_title' => 'CPT', 
-			// 	'capability' => 'manage_options', 
-			// 	'menu_slug' => 'alecaddd_cpt', 
-			// 	'callback' => array( $this->callbacks, 'adminCpt' )
-			// ),
+			array(
+				'parent_slug' => 'alecaddd_plugin', 
+				'page_title' => 'Deactive Plugin', 
+				'menu_title' => 'Deactive', 
+				'capability' => 'manage_options', 
+				'menu_slug' => 'alecaddd_cpt', 
+				'callback' => array( $this->callbacks, 'adminCpt' )
+			),
 			// array(
 			// 	'parent_slug' => 'alecaddd_plugin', 
 			// 	'page_title' => 'Custom Taxonomies', 

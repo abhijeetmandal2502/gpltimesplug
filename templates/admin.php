@@ -16,10 +16,14 @@
 				<?php 
 					settings_fields( 'alecaddd_options_group' );
 					do_settings_sections( 'alecaddd_plugin' );
+
+					//$valuetoken = get_option( 'gplstatus' );
 					submit_button();
 				?>
 			</form>
-			
+			<?php 
+				
+			?>
 		</div>
 
 
