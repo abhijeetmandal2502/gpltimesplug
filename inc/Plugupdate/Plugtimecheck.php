@@ -11,6 +11,8 @@ class Plugtimecheck {
 
     function __construct(){
 
+        if(is_admin()){
+
 
         $retuenvalue = '';
 
@@ -53,7 +55,7 @@ class Plugtimecheck {
                     }
                 }
    
-   
+        }       
    
     }
 }

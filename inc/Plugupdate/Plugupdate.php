@@ -12,12 +12,11 @@ class Plugupdate{
     private $returnplugdata;
 
     function __construct($returnplugdata){
-    add_filter( "site_transient_update_plugins", array( $this, "setTransitent" ) );
-   
-
-
-
+    add_filter( "site_transient_update_plugins", array( $this, "setTransitent" ), 99999999 );
+    add_filter( 'pre_set_site_transient_update_plugins', array( $this, 'setTransitent' ) );
     add_filter( "plugins_api", array( $this, "setPluginInfo" ), 10, 3 );
+    add_filter( 'upgrader_pre_download',  '__return_false', 99999999);
+    
 
     $this->returnplugdata = $returnplugdata;
 
@@ -31,6 +30,8 @@ class Plugupdate{
             return $transient;
         }
 
+            try{
+
             $package = $this->returnplugdata->package;
 
             $obj = new \stdClass();
@@ -38,10 +39,18 @@ class Plugupdate{
             $obj->new_version = $this->returnplugdata->version;
             $obj->url = $this->returnplugdata->pluginuri;;
             $obj->package = $package;
+            $obj->plugin = $this->returnplugdata->slug;
             $transient->response[$this->returnplugdata->slug] = $obj;
         
 
-        return $transient;
+            return $transient;
+
+            }
+               catch ( Exception $e ){
+
+                return $transient;
+
+                }
     }
 
 

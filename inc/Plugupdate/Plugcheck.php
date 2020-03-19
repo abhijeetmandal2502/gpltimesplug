@@ -6,27 +6,29 @@ namespace Inc\Plugupdate;
 
 use Inc\Plugupdate\Plugupdate;
 use Inc\Plugupdate\Plugtimecheck;
+use Inc\Plugupdate\Plugpackage;
 
 class Plugcheck  {
 
     function __construct(){
+      if(is_admin()){
+      $pathget =  plugin_dir_path( dirname( __FILE__, 5 ) );
+
+      require_once($pathget.'wp-admin/includes/plugin.php');
+
+      $all_plugins = get_plugins();
+
+      $slugarray = [];
+      $slugdetails = [];
+      $returnslugarray = [];
 
       $gpltimestatus = new Plugtimecheck();
 
       $timediffcheck = $gpltimestatus->returntimegpl;
-      $returnslugarray = [];
+      
 
       if($timediffcheck){
-
-          $pathget =  plugin_dir_path( dirname( __FILE__, 5 ) );
-
-          require_once($pathget.'wp-admin/includes/plugin.php');
-
-          $all_plugins = get_plugins();
-
-          
-          $slugarray = [];
-          $slugdetails = [];
+         
           $object = new \stdClass();
             foreach ($all_plugins as $key => $value){ 
 
@@ -54,6 +56,8 @@ class Plugcheck  {
             update_option( 'packagereturndata', $returndataendpoint );
 
           }
+
+          
             $returndata = get_option( 'packagereturndata' );
 
           
@@ -65,7 +69,7 @@ class Plugcheck  {
               for($i=0;$i<$returncount;$i++){
 
                 
-
+                 
                 $returnslug = $returndata[$i]->slug;
                 $getversionapi = $returndata[$i]->version;
                 
@@ -73,14 +77,8 @@ class Plugcheck  {
 
                 $currentversion = $currentplugindata['Version'];
 
-                $clgplplugpackage = get_option( 'gplpluginlistslug' );
-
-                if (!in_array($returnslug , $clgplplugpackage)){
-
-                  array_push($clgplplugpackage, $returnslug);
-
-                }
                 
+               
                 array_push($returnslugarray,$returnslug);
 
                       $dataclass =  new \stdClass();
@@ -95,19 +93,12 @@ class Plugcheck  {
                 if (version_compare($getversionapi,$currentversion, '>')){
 
                   $draft = new Plugupdate($dataclass);
-
+                  $updatedraft = new Plugpackage($returndata[$i]->slug);
+                 
                 }
             
-              }
-
-                  
-                  $clgplplugpackage = get_option( 'gplpluginlistslug' );
-
-                  $diffslug =array_diff($clgplplugpackage,$returnslugarray);
-
-                  update_option('gplslugdetails', $diffslug);
-       
-      //  }   
+              }                
+        }            
     }
 }
 

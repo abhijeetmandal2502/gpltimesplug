@@ -42,12 +42,12 @@ class Admin extends BaseController
 	{
 		$this->pages = array(
 			array(
-				'page_title' => 'Gpltimes Update', 
-				'menu_title' => 'Gpltime Update', 
+				'page_title' => 'GPLTimes Updater', 
+				'menu_title' => 'GPLTimes Updater', 
 				'capability' => 'manage_options', 
 				'menu_slug' => 'alecaddd_plugin', 
 				'callback' => array( $this->callbacks, 'adminDashboard' ), 
-				'icon_url' => 'dashicons-store', 
+				'icon_url' => 'dashicons-admin-plugins', 
 				'position' => 110
 			)
 		);
@@ -88,12 +88,12 @@ class Admin extends BaseController
 		$args = array(
 			array(
 				'option_group' => 'alecaddd_options_group',
-				'option_name' => 'text_example',
+				'option_name' => 'username',
 				'callback' => array( $this->callbacks, 'alecadddOptionsGroup' )
 			),
 			array(
 				'option_group' => 'alecaddd_options_group',
-				'option_name' => 'first_name'
+				'option_name' => 'password'
 			)
 		);
 
@@ -105,7 +105,7 @@ class Admin extends BaseController
 		$args = array(
 			array(
 				'id' => 'alecaddd_admin_index',
-				'title' => 'Gpltimes',
+				'title' => 'Login to GPLTimes',
 				'callback' => array( $this->callbacks, 'alecadddAdminSection' ),
 				'page' => 'alecaddd_plugin'
 			)
@@ -118,24 +118,24 @@ class Admin extends BaseController
 	{
 		$args = array(
 			array(
-				'id' => 'text_example',
-				'title' => 'User Name',
+				'id' => 'username',
+				'title' => 'User Name / Email',
 				'callback' => array( $this->callbacks, 'alecadddTextExample' ),
 				'page' => 'alecaddd_plugin',
 				'section' => 'alecaddd_admin_index',
 				'args' => array(
-					'label_for' => 'text_example',
+					'label_for' => 'username',
 					'class' => 'example-class'
 				)
 			),
 			array(
-				'id' => 'first_name',
+				'id' => 'password',
 				'title' => 'Password',
 				'callback' => array( $this->callbacks, 'alecadddFirstName' ),
 				'page' => 'alecaddd_plugin',
 				'section' => 'alecaddd_admin_index',
 				'args' => array(
-					'label_for' => 'first_name',
+					'label_for' => 'password',
 					'class' => 'example-class'
 					)
 				),

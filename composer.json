@@ -1,12 +1,12 @@
 {
     "name": "alecaddd/alecaddd-plugin",
-    "description": "Awesome starter plugin example",
+    "description": "GPlTimes",
     "type": "project",
     "license": "GPL",
     "authors": [
         {
-            "name": "Alecaddd",
-            "email": "castellani.ale@gmail.com"
+            "name": "Abhijeet Mandal",
+            "email": "abhijeetmandal2502@gmail.com"
         }
     ],
     "minimum-stability": "dev",

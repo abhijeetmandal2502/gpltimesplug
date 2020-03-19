@@ -18,16 +18,6 @@ class AdminCallbacks extends BaseController
 		return require_once( "$this->plugin_path/templates/deactive.php" );
 	}
 
-	public function adminTaxonomy()
-	{
-		return require_once( "$this->plugin_path/templates/taxonomy.php" );
-	}
-
-	public function adminWidget()
-	{
-		return require_once( "$this->plugin_path/templates/widget.php" );
-	}
-
 	public function alecadddOptionsGroup( $input )
 	{
 		return $input;
@@ -35,28 +25,28 @@ class AdminCallbacks extends BaseController
 
 	public function alecadddAdminSection()
 	{
-		echo 'Gpl Update settings! Enter Your GPltimes username password';
+		echo 'Enter your GPL Times username/email and password';
 		
 	}
 
 	public function alecadddTextExample()
 	{
-		$value = esc_attr( get_option( 'text_example' ) );
-		echo '<input type="text" class="regular-text" name="text_example" value="' . $value . '" placeholder="username of Gpltimes!">';
+		$value = esc_attr( get_option( 'username' ) );
+		echo '<input type="text" class="regular-text" name="username" value="' . $value . '" placeholder="Username/Email">';
 	}
 
 	public function alecadddFirstName()
 	{
-		$value = esc_attr( get_option( 'first_name' ) );
-		echo '<input type="password" class="regular-text" name="first_name" value="' . $value . '" placeholder="password">';
+		$value = esc_attr( get_option( 'password' ) );
+		echo '<input type="password" class="regular-text" name="password" value="' . $value . '" placeholder="Password">';
 	}
 
 	public function gplsubscription(){
 		$tokengpltime = '';
 		$main_url = 'https://gpl.wptemp.site/wp-json/jwt-auth/v1/token';
 		$received_values = array();
-		$received_values['username'] = esc_attr( get_option( 'text_example' ) );;
-		$received_values['password'] = esc_attr( get_option( 'first_name' ) );
+		$received_values['username'] = esc_attr( get_option( 'username' ) );;
+		$received_values['password'] = esc_attr( get_option( 'password' ) );
 		$received_values += stripslashes_deep($_POST);
 		$options = array('timeout' => 20, 'body' => $received_values,);		
 		$return_request = wp_safe_remote_post($main_url, $options);

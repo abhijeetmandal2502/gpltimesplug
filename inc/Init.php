@@ -20,7 +20,8 @@ final class Init
 			Base\Enqueue::class,
 			Base\SettingsLinks::class,
 			Plugupdate\Plugcheck::class,
-			Plugupdate\Plugtimecheck::class
+			Plugupdate\Plugtimecheck::class,
+			Plugupdate\Pluginfocheck::class,
 		];
 	}
 

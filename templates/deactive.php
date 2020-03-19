@@ -3,12 +3,12 @@ settings_errors();
  if(isset($_GET['deactive'])){
   //echo $_GET['deactive'];
 
-  $username = get_option( 'text_example' );
-  $password = get_option( 'first_name' );
+  $username = get_option( 'username' );
+  $password = get_option( 'password' );
 
     if( $username !='' && $password !=''){
-      update_option( 'text_example', '' );
-      update_option( 'first_name', '' );
+      update_option( 'username', '' );
+      update_option( 'password', '' );
       update_option('gplstatus', '');
     }
 
@@ -35,13 +35,12 @@ settings_errors();
   <div class="card">
     <h1><?php echo $status_title ?></h1>
 
-    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-
+    
     <?php
     if($status == NULL)
     {
       ?>
-      <div align="right">
+      <div align="left">
         <button class="<?php echo $status_class ?>">Deactivated</button>
       </div>
       <?php
@@ -50,7 +49,7 @@ settings_errors();
     elseif($status != NULL)
     {
       ?>
-      <div align="right">
+      <div align="left">
         <form method="get" action="">
           <input type="hidden"  name="page" value="alecaddd_cpt">
           <input type="hidden"  name="deactive" value="deactive">
