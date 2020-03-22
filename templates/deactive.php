@@ -15,7 +15,7 @@ settings_errors();
 }
 ?>
 <div class="wrap">
-	<h1>Gpltimes</h1>
+	<h1>GPL Times</h1>
 	
 
   <?php 
@@ -24,12 +24,12 @@ settings_errors();
   if($status == NULL)
   {
     $status_class = 'status_deactive';
-    $status_title = 'Plugin Is Deactive';
+    $status_title = 'GPL Times Updater is Deactivated';
   }
   else
   {
     $status_class = 'status_active';
-    $status_title = 'Plugin Is Active';
+    $status_title = 'GPL Times Updater Is Active';
   }
   ?>
   <div class="card">
