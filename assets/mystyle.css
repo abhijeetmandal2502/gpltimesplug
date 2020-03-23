@@ -13,6 +13,8 @@
     /* cursor: pointer; */
     opacity: 0.65; 
     cursor: not-allowed;
+	order-radius: 15px;
+    margin-top: 5px;
   }
   .status_active {
     background-color: #4CAF50;
@@ -27,6 +29,8 @@
     margin: 4px 2px;
     transition-duration: 0.4s;
     cursor: pointer;
+	  border-radius: 15px;
+    margin-top: 5px;
 }
 .status_active:hover {
     background-color: #f44336;
@@ -99,8 +103,8 @@
     width: 80px;
     height: 20px;
     font-family: inherit;
-    font-weight: bold;
-    font-size: medium;
+    font-weight: normal;
+    font-size: 14px;
 }
 
 .gplmyplugnotactive{
@@ -116,6 +120,6 @@
     width: 100px;
     height: 20px;
     font-family: inherit;
-    font-weight: bold;
-    font-size: medium;	
+    font-weight: normal;
+    font-size: 14px;	
 }
