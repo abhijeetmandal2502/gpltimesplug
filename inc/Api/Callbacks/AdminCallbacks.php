@@ -1,6 +1,6 @@
 <?php 
 /**
- * @package  AlecadddPlugin
+ * @package  Gpltimes
  */
 namespace Inc\Api\Callbacks;
 
@@ -18,24 +18,24 @@ class AdminCallbacks extends BaseController
 		return require_once( "$this->plugin_path/templates/deactive.php" );
 	}
 
-	public function alecadddOptionsGroup( $input )
+	public function gplOptionsGroup( $input )
 	{
 		return $input;
 	}
 
-	public function alecadddAdminSection()
+	public function gplAdminSection()
 	{
 		echo 'Enter your GPL Times username/email and password';
 		
 	}
 
-	public function alecadddTextExample()
+	public function gpltimesusername()
 	{
 		$value = esc_attr( get_option( 'username' ) );
 		echo '<input type="text" class="regular-text" name="username" value="' . $value . '" placeholder="Username/Email">';
 	}
 
-	public function alecadddFirstName()
+	public function gpltimespassword()
 	{
 		$value = esc_attr( get_option( 'password' ) );
 		echo '<input type="password" class="regular-text" name="password" value="' . $value . '" placeholder="Password">';
@@ -43,7 +43,7 @@ class AdminCallbacks extends BaseController
 
 	public function gplsubscription(){
 		$tokengpltime = '';
-		$main_url = 'https://gpl.wptemp.site/wp-json/jwt-auth/v1/token';
+		$main_url = 'https://gpl.wptemp.site//wp-json/jwt-auth/v1/token';
 		$received_values = array();
 		$received_values['username'] = esc_attr( get_option( 'username' ) );;
 		$received_values['password'] = esc_attr( get_option( 'password' ) );

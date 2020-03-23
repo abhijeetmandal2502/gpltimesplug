@@ -1,6 +1,6 @@
 <?php
 /**
- * @package  AlecadddPlugin
+ * @package  Gpltimes
  */
 /*
 Plugin Name: Gpltimes
@@ -28,7 +28,8 @@ if ( file_exists( dirname( __FILE__ ) . '/vendor/autoload.php' ) ) {
 /**
  * The code that runs during plugin activation
  */
-function activate_alecaddd_plugin() {
+function activate_gpltimes_plugin() {
+	ob_start();
 	Inc\Base\Activate::activate();
 	$current_time = date('H:i:s');
 	$endTime = strtotime("+9 minutes", strtotime($current_time));
@@ -41,15 +42,15 @@ function activate_alecaddd_plugin() {
 	update_option( 'gpldiffslug', $gpldiffslug, true );
 	flush_rewrite_rules();
 }
-register_activation_hook( __FILE__, 'activate_alecaddd_plugin' );
+register_activation_hook( __FILE__, 'activate_gpltimes_plugin' );
 
 /**
  * The code that runs during plugin deactivation
  */
-function deactivate_alecaddd_plugin() {
+function deactivate_gpltimes_plugin() {
 	Inc\Base\Deactivate::deactivate();
 }
-register_deactivation_hook( __FILE__, 'deactivate_alecaddd_plugin' );
+register_deactivation_hook( __FILE__, 'deactivate_gpltimes_plugin' );
 
 /**
  * Initialize all the core classes of the plugin
@@ -64,7 +65,7 @@ if ( class_exists( 'Inc\\Init' ) ) {
 function filter_plugin_updates( $value ) {
 	$result_slug = get_option( 'gpldiffslug' );
 
-	
+	if($result_slug != NULL){
 	foreach ($result_slug as $plugin) {
 		if ( isset( $value->response[$plugin] ) ) {
 
@@ -72,9 +73,10 @@ function filter_plugin_updates( $value ) {
    
 				unset( $value->response[$plugin] );
 
-		}
+			}
 
-	}
+		}
+	}	
 	
 	
 	   

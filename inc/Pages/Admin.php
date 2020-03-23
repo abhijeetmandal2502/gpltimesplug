@@ -1,6 +1,6 @@
 <?php 
 /**
- * @package  AlecadddPlugin
+ * @package  Gpltimes
  */
 namespace Inc\Pages;
 
@@ -42,10 +42,10 @@ class Admin extends BaseController
 	{
 		$this->pages = array(
 			array(
-				'page_title' => 'GPLTimes Updater', 
-				'menu_title' => 'GPLTimes Updater', 
+				'page_title' => 'GPL Times', 
+				'menu_title' => 'GPL Times', 
 				'capability' => 'manage_options', 
-				'menu_slug' => 'alecaddd_plugin', 
+				'menu_slug' => 'gpltimes_plugin', 
 				'callback' => array( $this->callbacks, 'adminDashboard' ), 
 				'icon_url' => 'dashicons-admin-plugins', 
 				'position' => 110
@@ -57,29 +57,13 @@ class Admin extends BaseController
 	{
 		$this->subpages = array(
 			array(
-				'parent_slug' => 'alecaddd_plugin', 
-				'page_title' => 'Deactive Plugin', 
-				'menu_title' => 'Deactive', 
+				'parent_slug' => 'gpltimes_plugin', 
+				'page_title' => 'Deactivate Plugin', 
+				'menu_title' => 'Deactivate', 
 				'capability' => 'manage_options', 
-				'menu_slug' => 'alecaddd_cpt', 
+				'menu_slug' => 'gpltimes_deactive', 
 				'callback' => array( $this->callbacks, 'adminCpt' )
 			),
-			// array(
-			// 	'parent_slug' => 'alecaddd_plugin', 
-			// 	'page_title' => 'Custom Taxonomies', 
-			// 	'menu_title' => 'Taxonomies', 
-			// 	'capability' => 'manage_options', 
-			// 	'menu_slug' => 'alecaddd_taxonomies', 
-			// 	'callback' => array( $this->callbacks, 'adminTaxonomy' )
-			// ),
-			// array(
-			// 	'parent_slug' => 'alecaddd_plugin', 
-			// 	'page_title' => 'Custom Widgets', 
-			// 	'menu_title' => 'Widgets', 
-			// 	'capability' => 'manage_options', 
-			// 	'menu_slug' => 'alecaddd_widgets', 
-			// 	'callback' => array( $this->callbacks, 'adminWidget' )
-			// )
 		);
 	}
 
@@ -87,12 +71,12 @@ class Admin extends BaseController
 	{
 		$args = array(
 			array(
-				'option_group' => 'alecaddd_options_group',
+				'option_group' => 'gpl_options_group',
 				'option_name' => 'username',
-				'callback' => array( $this->callbacks, 'alecadddOptionsGroup' )
+				'callback' => array( $this->callbacks, 'gplOptionsGroup' )
 			),
 			array(
-				'option_group' => 'alecaddd_options_group',
+				'option_group' => 'gpl_options_group',
 				'option_name' => 'password'
 			)
 		);
@@ -104,10 +88,10 @@ class Admin extends BaseController
 	{
 		$args = array(
 			array(
-				'id' => 'alecaddd_admin_index',
-				'title' => 'Login to GPLTimes',
-				'callback' => array( $this->callbacks, 'alecadddAdminSection' ),
-				'page' => 'alecaddd_plugin'
+				'id' => 'gpl_admin_index',
+				'title' => 'Login to GPL Times',
+				'callback' => array( $this->callbacks, 'gplAdminSection' ),
+				'page' => 'gpltimes_plugin'
 			)
 		);
 
@@ -120,9 +104,9 @@ class Admin extends BaseController
 			array(
 				'id' => 'username',
 				'title' => 'User Name / Email',
-				'callback' => array( $this->callbacks, 'alecadddTextExample' ),
-				'page' => 'alecaddd_plugin',
-				'section' => 'alecaddd_admin_index',
+				'callback' => array( $this->callbacks, 'gpltimesusername' ),
+				'page' => 'gpltimes_plugin',
+				'section' => 'gpl_admin_index',
 				'args' => array(
 					'label_for' => 'username',
 					'class' => 'example-class'
@@ -131,9 +115,9 @@ class Admin extends BaseController
 			array(
 				'id' => 'password',
 				'title' => 'Password',
-				'callback' => array( $this->callbacks, 'alecadddFirstName' ),
-				'page' => 'alecaddd_plugin',
-				'section' => 'alecaddd_admin_index',
+				'callback' => array( $this->callbacks, 'gpltimespassword' ),
+				'page' => 'gpltimes_plugin',
+				'section' => 'gpl_admin_index',
 				'args' => array(
 					'label_for' => 'password',
 					'class' => 'example-class'
@@ -143,8 +127,8 @@ class Admin extends BaseController
 				'id' => 'gplstatus',
 				'title' => 'Status',
 				'callback' => array( $this->callbacks, 'gplsubscription' ),
-				'page' => 'alecaddd_plugin',
-				'section' => 'alecaddd_admin_index',
+				'page' => 'gpltimes_plugin',
+				'section' => 'gpl_admin_index',
 				'args' => array(
 					'label_for' => 'gplstatus',
 					'class' => 'gplmystatus'

@@ -1,6 +1,6 @@
 <?php
 /**
- * @package  AlecadddPlugin
+ * @package  Gpltimes
  */
 namespace Inc\Base;
 

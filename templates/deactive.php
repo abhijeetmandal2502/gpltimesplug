@@ -1,7 +1,7 @@
 <?php
 settings_errors();
  if(isset($_GET['deactive'])){
-  //echo $_GET['deactive'];
+ 
 
   $username = get_option( 'username' );
   $password = get_option( 'password' );
@@ -15,7 +15,7 @@ settings_errors();
 }
 ?>
 <div class="wrap">
-	<h1>Gpltimes</h1>
+	<h1>GPL Times</h1>
 	
 
   <?php 
@@ -24,12 +24,12 @@ settings_errors();
   if($status == NULL)
   {
     $status_class = 'status_deactive';
-    $status_title = 'Plugin Is Deactive';
+    $status_title = 'GPL Times Updater is Deactivated';
   }
   else
   {
     $status_class = 'status_active';
-    $status_title = 'Plugin Is Active';
+    $status_title = 'GPL Times Updater Is Active';
   }
   ?>
   <div class="card">
@@ -51,7 +51,7 @@ settings_errors();
       ?>
       <div align="left">
         <form method="get" action="">
-          <input type="hidden"  name="page" value="alecaddd_cpt">
+          <input type="hidden"  name="page" value="gpltimes_deactive">
           <input type="hidden"  name="deactive" value="deactive">
           <input class="<?php echo $status_class ?>" type="submit" value="Deactivate Now" name="deactive">
         </form>

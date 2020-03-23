@@ -1,121 +1,125 @@
 .status_deactive {
-    background-color: #f44336;
-    border: none;
-    color: white;
-    padding: 16px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    font-family: inherit;
-    transition-duration: 0.4s;
-    /* cursor: pointer; */
-    opacity: 0.65; 
-    cursor: not-allowed;
-  }
-  .status_active {
-    background-color: #4CAF50;
-    border: none;
-    color: white;
-    padding: 16px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-family: inherit;
-    font-size: 16px;
-    margin: 4px 2px;
-    transition-duration: 0.4s;
-    cursor: pointer;
+  background-color: #f44336;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  font-family: inherit;
+  transition-duration: 0.4s;
+  /* cursor: pointer; */
+  opacity: 0.65; 
+  cursor: not-allowed;
+  border-radius: 15px;
+  margin-top: 5px;
+}
+.status_active {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-family: inherit;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 15px;
+  margin-top: 5px;
 }
 .status_active:hover {
-    background-color: #f44336;
-    color: white;
-  }
+  background-color: #f44336;
+  color: white;
+}
 .card {
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
-    width: 60%;
-  }
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 60%;
+}
 .nav-tabs {
-	float: left;
-	width: 100%;
-	margin: 0;
-	list-style-type: none;
-	border-bottom: 1px solid transparent;
+float: left;
+width: 100%;
+margin: 0;
+list-style-type: none;
+border-bottom: 1px solid transparent;
 }
 
 .nav-tabs > li {
-	float: left;
-	margin-bottom: -1px;
+float: left;
+margin-bottom: -1px;
 }
 
 .nav-tabs > li > a {
-	margin-right: 2px;
-	line-height: 1.5;
-	padding: 10px;
-	border: 1px solid transparent;
-	border-radius: 4px 4px 0 0;
-	float: left;
-	text-decoration: none;
+margin-right: 2px;
+line-height: 1.5;
+padding: 10px;
+border: 1px solid transparent;
+border-radius: 4px 4px 0 0;
+float: left;
+text-decoration: none;
 }
 
 .nav-tabs > li > a:hover {
-	border-color: #eee #eee #ddd;
+border-color: #eee #eee #ddd;
 }
 
 .nav-tabs > li.active > a,
 .nav-tabs > li.active > a:hover,
 .nav-tabs > li.active > a:focus {
-	color: #555;
-	cursor: default;
-	background-color: #fff;
-	border-color: transparent;
+color: #555;
+cursor: default;
+background-color: #fff;
+border-color: transparent;
 }
 
 .tab-content > .tab-pane {
-	float: left;
-	width: 100%;
-	display: none;
+float: left;
+width: 100%;
+display: none;
 }
 
 .tab-content > .tab-pane.active {
-	display: block;
-	padding: 10px;
-	background-color: #fff;
-	box-shadow: 0 5px 4px -2px rgba(0, 0, 0, 0.15);
+display: block;
+padding: 10px;
+background-color: #fff;
+box-shadow: 0 5px 4px -2px rgba(0, 0, 0, 0.15);
 }
 
 .gplmyplugactive {
-    display: inline-block;
-    color: #444;
-    box-shadow: 0 0 5px -1px rgba(0,0,0,0.2);
-    vertical-align: middle;
-    max-width: 100px;
-    padding: 5px;
-    text-align: center;
-    background-color: #1cdc34;
-    border-radius: 3px;
-    width: 80px;
-    height: 20px;
-    font-family: inherit;
-    font-weight: bold;
-    font-size: medium;
+  display: inline-block;
+  color: #444;
+  box-shadow: 0 0 5px -1px rgba(0,0,0,0.2);
+  vertical-align: middle;
+  max-width: 100px;
+  padding: 5px;
+  text-align: center;
+  background-color: #1cdc34;
+  border-radius: 3px;
+  width: 80px;
+  height: 20px;
+  font-family: inherit;
+  font-weight: normal;
+  font-size: 14px;
 }
 
 .gplmyplugnotactive{
-    display: inline-block;
-    color: #444;
-    box-shadow: 0 0 5px -1px rgba(0,0,0,0.2);
-    vertical-align: middle;
-    max-width: 100px;
-    padding: 5px;
-    text-align: center;
-    background-color: #ff0332;
-    border-radius: 3px;
-    width: 100px;
-    height: 20px;
-    font-family: inherit;
-    font-weight: bold;
-    font-size: medium;	
+  display: inline-block;
+  color: #444;
+  box-shadow: 0 0 5px -1px rgba(0,0,0,0.2);
+  vertical-align: middle;
+  max-width: 100px;
+  padding: 5px;
+  text-align: center;
+  background-color: #ff0332;
+  border-radius: 3px;
+  width: 100px;
+  height: 20px;
+  font-family: inherit;
+  font-weight: normal;
+  font-size: 14px;	
 }

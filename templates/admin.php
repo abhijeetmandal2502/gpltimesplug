@@ -1,6 +1,5 @@
 
 <div class="wrap">
-	<h1>Gpltimes</h1>
 	<?php settings_errors(); ?>
 
 	<ul class="nav nav-tabs">
@@ -14,10 +13,10 @@
 
 			<form method="post" action="options.php">
 				<?php 
-					settings_fields( 'alecaddd_options_group' );
-					do_settings_sections( 'alecaddd_plugin' );
+					settings_fields( 'gpl_options_group' );
+					do_settings_sections( 'gpltimes_plugin' );
 
-					//$valuetoken = get_option( 'gplstatus' );
+					
 					submit_button();
 				?>
 			</form>
