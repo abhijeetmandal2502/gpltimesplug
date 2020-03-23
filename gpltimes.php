@@ -3,7 +3,7 @@
  * @package  Gpltimes
  */
 /*
-Plugin Name: Gpltimes
+Plugin Name: GPL Times
 Plugin URI: https://gpltimes.com/
 Description: GPLTimes Auto Updater 
 Version: 1.0.0
