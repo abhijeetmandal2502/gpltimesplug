@@ -109,13 +109,13 @@ box-shadow: 0 5px 4px -2px rgba(0, 0, 0, 0.15);
 
 .gplmyplugnotactive{
   display: inline-block;
-  color: #444;
+  color: #ffffff;
   box-shadow: 0 0 5px -1px rgba(0,0,0,0.2);
   vertical-align: middle;
   max-width: 100px;
   padding: 5px;
   text-align: center;
-  background-color: #ff0332;
+  background-color: #dc3232;
   border-radius: 3px;
   width: 100px;
   height: 20px;
