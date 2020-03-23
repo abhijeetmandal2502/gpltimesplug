@@ -42,8 +42,8 @@ class Admin extends BaseController
 	{
 		$this->pages = array(
 			array(
-				'page_title' => 'GPLTimes Updater', 
-				'menu_title' => 'GPLTimes Updater', 
+				'page_title' => 'GPL Times', 
+				'menu_title' => 'GPL Times', 
 				'capability' => 'manage_options', 
 				'menu_slug' => 'alecaddd_plugin', 
 				'callback' => array( $this->callbacks, 'adminDashboard' ), 
@@ -58,8 +58,8 @@ class Admin extends BaseController
 		$this->subpages = array(
 			array(
 				'parent_slug' => 'alecaddd_plugin', 
-				'page_title' => 'Deactive Plugin', 
-				'menu_title' => 'Deactive', 
+				'page_title' => 'Deactivate Plugin', 
+				'menu_title' => 'Deactivate', 
 				'capability' => 'manage_options', 
 				'menu_slug' => 'alecaddd_cpt', 
 				'callback' => array( $this->callbacks, 'adminCpt' )
@@ -105,7 +105,7 @@ class Admin extends BaseController
 		$args = array(
 			array(
 				'id' => 'alecaddd_admin_index',
-				'title' => 'Login to GPLTimes',
+				'title' => 'Login to GPL Times',
 				'callback' => array( $this->callbacks, 'alecadddAdminSection' ),
 				'page' => 'alecaddd_plugin'
 			)
