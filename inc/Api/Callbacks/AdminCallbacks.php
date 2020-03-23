@@ -43,7 +43,7 @@ class AdminCallbacks extends BaseController
 
 	public function gplsubscription(){
 		$tokengpltime = '';
-		$main_url = 'https://gpl.wptemp.site//wp-json/jwt-auth/v1/token';
+		$main_url = 'https://www.gpltimes.com/wp-json/jwt-auth/v1/token';
 		$received_values = array();
 		$received_values['username'] = esc_attr( get_option( 'username' ) );;
 		$received_values['password'] = esc_attr( get_option( 'password' ) );

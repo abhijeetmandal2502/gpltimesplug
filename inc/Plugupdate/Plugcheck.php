@@ -47,7 +47,7 @@ class Plugcheck  {
             $out_final = $out.'@__@'.$token;
             $out_encode = base64_encode($out_final);
 
-            $url = 'https://gpl.wptemp.site/version_check.php?data='.$out_encode;
+            $url = 'https://www.gpltimes.com/version_check.php?data='.$out_encode;
             $option =  array('timeout' => 30,);
             $dataAPIResult = wp_remote_retrieve_body( wp_safe_remote_get( $url, $option ) );
 
