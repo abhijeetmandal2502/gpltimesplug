@@ -15,6 +15,9 @@ class Plugpackage{
 
        
       
+       if(!empty($all_package)){
+
+
        
        
        if(!in_array($value,$all_package)){
@@ -24,7 +27,7 @@ class Plugpackage{
            update_option( 'gplslugdetails', $all_package);
         }
         
-
+    }
             
     }
 
