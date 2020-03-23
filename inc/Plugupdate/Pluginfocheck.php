@@ -39,9 +39,13 @@ class Pluginfocheck{
 
          $valuegpl = get_option( 'gplslugdetails' );
 
-         $result_slug =array_diff($valuegpl,$not_check_slug);
+         if(!empty($valuegpl)){
+
+         $result_slug = array_diff($valuegpl,$not_check_slug);
 
          update_option( 'gpldiffslug', $result_slug );
+
+         }
 
          $result_slug = get_option( 'gpldiffslug' );
          
