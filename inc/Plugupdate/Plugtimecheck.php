@@ -29,7 +29,7 @@ class Plugtimecheck {
         $diff = round((strtotime($statusgpltimes) - strtotime($current_time)) / 60,2);
 
     
-        if($diff <= 9 && $diff > 5){
+        if($diff <= 59 && $diff > 56){
 
             $retuenvalue = 1;
 

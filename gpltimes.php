@@ -88,4 +88,10 @@ add_filter( 'site_transient_update_plugins', 'filter_plugin_updates'  , 99999998
 
 
 
+//update_option( 'gpltimestatus', '16:30:31', true );
+
+
+
+
+
 
