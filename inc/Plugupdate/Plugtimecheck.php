@@ -49,7 +49,7 @@ class Plugtimecheck {
 
                     if($diff < 1 ){
 
-                         $endTime = strtotime("+10 minutes", strtotime($current_time));
+                         $endTime = strtotime("+60 minutes", strtotime($current_time));
                          $finaltime = date('H:i:s', $endTime);
                          update_option( 'gpltimestatus', $finaltime, true );
                     }
