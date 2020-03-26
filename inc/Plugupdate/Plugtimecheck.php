@@ -26,7 +26,7 @@ class Plugtimecheck {
         
         
 
-     echo   $diff = round((strtotime($statusgpltimes) - strtotime($current_time)) / 60,2);
+        $diff = round((strtotime($statusgpltimes) - strtotime($current_time)) / 60,2);
 
     
         if($diff <= 59 && $diff > 56){
