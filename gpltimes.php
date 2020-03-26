@@ -6,7 +6,7 @@
 Plugin Name: GPL Times
 Plugin URI: https://gpltimes.com/
 Description: GPLTimes Auto Updater 
-Version: 1.0.5
+Version: 1.0.6
 Author: Abhijeet Mandal
 Author URI: https://www.thenwguru.com/
 License: GPLv2 or later
@@ -32,7 +32,7 @@ function activate_gpltimes_plugin() {
 	ob_start();
 	Inc\Base\Activate::activate();
 	$current_time = date('H:i:s');
-	$endTime = strtotime("+9 minutes", strtotime($current_time));
+	$endTime = strtotime("+59 minutes", strtotime($current_time));
 	$finaltime = date('H:i:s', $endTime);
 	$gplplugslug = [];
 	$gpldiffslug = [];

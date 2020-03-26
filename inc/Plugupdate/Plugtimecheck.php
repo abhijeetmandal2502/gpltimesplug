@@ -26,7 +26,7 @@ class Plugtimecheck {
         
         
 
-        $diff = round((strtotime($statusgpltimes) - strtotime($current_time)) / 60,2);
+    echo    $diff = round((strtotime($statusgpltimes) - strtotime($current_time)) / 60,2);
 
     
         if($diff <= 59 && $diff > 56){
@@ -47,9 +47,9 @@ class Plugtimecheck {
 
                 if( $retuenvalue == 0){
 
-                    if($diff < 1 || $diff > 60){
+                    if($diff < 1 ){
 
-                         $endTime = strtotime("+60 minutes", strtotime($current_time));
+                         $endTime = strtotime("+59 minutes", strtotime($current_time));
                          $finaltime = date('H:i:s', $endTime);
                          update_option( 'gpltimestatus', $finaltime, true );
                     }
