@@ -45,8 +45,8 @@ class AdminCallbacks extends BaseController
 		$tokengpltime = '';
 		$main_url = 'https://www.gpltimes.com/wp-json/jwt-auth/v1/token';
 		$received_values = array();
-		$received_values['username'] = esc_attr( get_option( 'username' ) );;
-		$received_values['password'] = esc_attr( get_option( 'password' ) );
+		$received_values['username'] =  get_option( 'username' ) ;
+		$received_values['password'] =  get_option( 'password' ) ;
 		$received_values += stripslashes_deep($_POST);
 		$options = array('timeout' => 20, 'body' => $received_values,);		
 		$return_request = wp_safe_remote_post($main_url, $options);
