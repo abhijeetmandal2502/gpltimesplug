@@ -1,3 +1,7 @@
+.tab-pane h2 {
+    text-transform: uppercase;
+}
+
 table.updategpl
 {
   width:100%;
