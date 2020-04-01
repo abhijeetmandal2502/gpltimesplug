@@ -19,15 +19,15 @@ $pluginpageurl = get_option('siteurl').'/wp-admin/plugins.php';
 ?>
 
 <div class="wrapgpl">
-    <h1>GPL Times</h1>
+   
     <div class="cardgpl">
     
     <?php if(!empty($returndata )){ ?>
     
-    <h2>sucessfully get update</h2>
+    <h2>Manual update check</h2>
     
     <div align="left">
-        <a class="status_active" href="<?php echo $pluginpageurl;?>">Go to Plugin Page</a>
+        <a class="status_active" href="<?php echo $pluginpageurl;?>">Go to Plugins Page</a>
       </div> 
 
     <?php } else{ ?>
