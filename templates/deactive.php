@@ -32,7 +32,7 @@ settings_errors();
     $status_title = 'GPL Times Updater Is Active';
   }
   ?>
-  <div class="card">
+  <div class="gplcard1">
     <h1><?php echo $status_title ?></h1>
 
     
