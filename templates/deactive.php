@@ -15,7 +15,7 @@ settings_errors();
 }
 ?>
 <div class="wrap">
-	<h1>GPL Times</h1>
+	
 	
 
   <?php 
