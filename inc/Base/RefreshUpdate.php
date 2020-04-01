@@ -1,0 +1,22 @@
+<?php
+/**
+ * @package  Gpltimes
+ */
+namespace Inc\Base;
+
+use Inc\Base\BaseController;
+
+class RefreshUpdate extends BaseController
+{
+	public function register() 
+	{
+		add_filter( "plugin_action_links_$this->plugin", array( $this, 'update_link' ) );
+	}
+
+	public function update_link( $links ) 
+	{
+		$update_link = '<a href="admin.php?page=gpltimes_manual_update_check">Manual update check</a>';
+		array_push( $links, $update_link );
+		return $links;
+	}
+}

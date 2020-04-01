@@ -23,9 +23,15 @@ class Pluginfocheck{
 
               for($i=0;$i<$returncount;$i++){
                 $returnslug = $returndata[$i]->slug;
-                $getversionapi = $returndata[$i]->version;
+				$getversionapi = $returndata[$i]->version;
+				
+				if (array_key_exists($returnslug,$all_plugins))
+                {
                 
-                $currentplugindata =  $all_plugins[$returnslug];
+                
+					$currentplugindata =  $all_plugins[$returnslug];
+				
+				}
 
                 $currentversion = $currentplugindata['Version'];
 

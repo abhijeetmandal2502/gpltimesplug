@@ -64,6 +64,15 @@ class Admin extends BaseController
 				'menu_slug' => 'gpltimes_deactive', 
 				'callback' => array( $this->callbacks, 'adminCpt' )
 			),
+
+			array(
+				'parent_slug' => 'gpltimes_plugin', 
+				'page_title' => 'Manual update check', 
+				'menu_title' => 'Manual update', 
+				'capability' => 'manage_options', 
+				'menu_slug' => 'gpltimes_manual_update_check', 
+				'callback' => array( $this->callbacks, 'manualupdate' )
+			),
 		);
 	}
 

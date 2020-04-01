@@ -123,3 +123,25 @@ box-shadow: 0 5px 4px -2px rgba(0, 0, 0, 0.15);
   font-weight: normal;
   font-size: 14px;	
 }
+
+.updategpl.table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.updategpl.td th {
+  border: 1px solid #000;
+  text-align: left;
+  padding: 8px;
+  text-transform: capitalize;
+  }
+  
+  .updategpl.th{
+  background-color: #000;
+  color: rgb(11, 245, 108);
+  }
+
+  .updategpl.tr:nth-child(even) {
+  background-color: rgb(255, 255, 255);
+}

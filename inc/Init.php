@@ -18,6 +18,7 @@ final class Init
 		return [
 			Pages\Admin::class,
 			Base\Enqueue::class,
+			Base\RefreshUpdate::class,
 			Base\SettingsLinks::class,
 			Plugupdate\Plugcheck::class,
 			Plugupdate\Plugtimecheck::class,

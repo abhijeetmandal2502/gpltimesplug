@@ -18,6 +18,11 @@ class AdminCallbacks extends BaseController
 		return require_once( "$this->plugin_path/templates/deactive.php" );
 	}
 
+	public function manualupdate()
+	{
+		return require_once( "$this->plugin_path/templates/manualupdate.php" );
+	}
+
 	public function gplOptionsGroup( $input )
 	{
 		return $input;
