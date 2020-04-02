@@ -17,6 +17,8 @@ $pluginpageurl = get_option('siteurl').'/wp-admin/plugins.php';
 
 $all_plugins = get_plugins();
 
+$indexcount = 1;
+
 //echo $test =  plugin_basename(__FILE__);
 ?>
 
@@ -63,11 +65,13 @@ $all_plugins = get_plugins();
     
             ?> 
         <tr>
-            <td><?php echo $i; ?></td>
+            <td><?php echo $indexcount; ?></td>
             <td><?php echo $returndata[$i]->name; ?> </td>
             <td><?php echo $returndata[$i]->version; ?></td>
         </tr>
-        <?php } } ?>
+        <?php 
+    $indexcount++;
+    } } ?>
         
       
         
