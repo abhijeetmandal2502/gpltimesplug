@@ -18,7 +18,7 @@ $pluginpageurl = get_option('siteurl').'/wp-admin/plugins.php';
 //echo $test =  plugin_basename(__FILE__);
 ?>
 
-<div class="wrapgpl">
+<div class="wrap">
    
     <div class="cardgpl">
     
