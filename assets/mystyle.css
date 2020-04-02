@@ -1,3 +1,11 @@
+.form-table td, .form-table th
+{
+padding: 10px;
+}
+.form-table th {
+    vertical-align: middle;
+}
+
 .gpllogin {
     font-size: 15px;
     color: #333333;
