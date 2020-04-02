@@ -1,3 +1,27 @@
+input[type=email], input[type=password], input[type=search], input[type=text]{
+    line-height: 2;
+    min-height: 30px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 300px;
+    
+    height: 38px;
+    padding: 5px 15px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    background: #e8ebed;
+    color: #576366;
+    font-size: 15px;
+}
+
+label {
+    font-size: 15px;
+    color: #333333;
+    text-transform: uppercase;
+}
+
 table.updategpl {
   margin-top:20px;
     width: 100%;
