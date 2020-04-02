@@ -14,7 +14,7 @@ settings_errors();
 
 }
 ?>
-<div class="wrap">
+<div class="wrapgpl">
 	
 	
 
