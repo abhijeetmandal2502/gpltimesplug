@@ -1,15 +1,15 @@
-.tab-pane h2 {
-    text-transform: uppercase;
-}
-
-table.updategpl
-{
-  width:100%;
-  border-collapse: collapse;
+table.updategpl {
+  margin-top:20px;
+    width: 100%;
+     text-align: left;
+   border-collapse: separate;
+    border-spacing: 0;
+    border: 2px solid #f15151;
+    border-radius: 0.25rem;
 }
 
 table.updategpl td, table.updategpl th {
-  border: 1px solid #ddd;
+  border-left: 1px solid #ddd;
   padding: 8px;
 }
 
@@ -18,12 +18,13 @@ table.updategpl tr:nth-child(even){background-color: #f2f2f2;}
 table.updategpl tr:hover {background-color: #ddd;}
 
 table.updategpl th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: left;
-  background-color: #7A9C59;
-  color: #ffffff;
-  text-transform: uppercase;
+  padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: left;
+    background-color: #f15151;
+    color: #ecf0f1;
+    text-transform: uppercase;
+    border: none;
 }
 
 
@@ -38,46 +39,49 @@ table.updategpl th {
     padding: 10px 12px;
 }
 
-.cardgpl h2 {
+.cardgpl h2, .gplcard1 h1 {
     text-transform: uppercase;
     color: #333333;
+
 }
 
 .status_deactive {
-  background-color: #f44336;
+  background-color: #f15151;
   border: none;
-  color: white;
-  padding: 16px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  font-family: inherit;
-  transition-duration: 0.4s;
-  /* cursor: pointer; */
-  opacity: 0.65; 
-  cursor: not-allowed;
-  margin: 5px 0px;
-    text-transform: uppercase;
-}
-.status_active {
-    background-color: #4CAF50;
-    border: none;
-    color: white;
     padding: 10px 20px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-family: inherit;
     font-size: 15px;
-    margin: 4px 2px;
-    transition-duration: 0.4s;
-    cursor: pointer;
-   /* border-radius: 15px; */
-    margin: 5px 0px;
+    margin: 5px 0px 10px;
     text-transform: uppercase;
-
+    border-width: 0;
+    outline: none;
+    border-radius: 2px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+    color: #ecf0f1;
+    transition: background-color .3s;
+    cursor: pointer;
+}
+.status_active {
+    background-color: #4CAF50;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-family: inherit;
+    font-size: 15px;
+    margin: 5px 0px 10px;
+    text-transform: uppercase;
+    border-width: 0;
+    outline: none;
+    border-radius: 2px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+    color: #ecf0f1;
+    transition: background-color .3s;
+    cursor: pointer;
 }
 
 .status_active:hover {
@@ -94,54 +98,15 @@ table.updategpl th {
     margin: 5px 15px 2px;
     padding: 10px 12px;
 }
-.nav-tabs {
-float: left;
-width: 100%;
-margin: 0;
-list-style-type: none;
-border-bottom: 1px solid transparent;
+
+.tab-pane h2 {
+    text-transform: uppercase;
 }
 
-.nav-tabs > li {
-float: left;
-margin-bottom: -1px;
-}
-
-.nav-tabs > li > a {
-margin-right: 2px;
-line-height: 1.5;
-padding: 10px;
-border: 1px solid transparent;
-border-radius: 4px 4px 0 0;
-float: left;
-text-decoration: none;
-}
-
-.nav-tabs > li > a:hover {
-border-color: #eee #eee #ddd;
-}
-
-.nav-tabs > li.active > a,
-.nav-tabs > li.active > a:hover,
-.nav-tabs > li.active > a:focus {
-color: #555;
-cursor: default;
-background-color: #fff;
-border-color: transparent;
-}
-
-.tab-content > .tab-pane {
-float: left;
-width: 100%;
-display: none;
-}
-
-.tab-content > .tab-pane.active {
+.tab-pane {
 display: block;
-    /* padding: 10px; */
-    background-color: #fff;
-    /* box-shadow: 0 5px 4px -2px rgba(0, 0, 0, 0.15); */
-    transition: 0.3s;
+   background-color: #fff;
+     transition: 0.3s;
     border-left-color: #c1408d !important;
     border: 1px solid #ccd0d4;
     border-left-width: 4px;
@@ -151,36 +116,40 @@ display: block;
 }
 
 .gplmyplugactive {
-  display: inline-block;
-  color: #444;
-  box-shadow: 0 0 5px -1px rgba(0,0,0,0.2);
-  vertical-align: middle;
-  max-width: 100px;
-  padding: 5px;
-  text-align: center;
-  background-color: #1cdc34;
-  border-radius: 3px;
-  width: 80px;
-  height: 20px;
-  font-family: inherit;
-  font-weight: normal;
-  font-size: 14px;
+    display: inline-block;
+    vertical-align: middle;
+   padding: 8px 20px;
+    text-align: center;
+    font-family: inherit;
+    font-weight: normal;
+    font-size: 14px;
+    border-width: 0;
+    outline: none;
+    border-radius: 2px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+    background-color: #4CAF50;
+    color: #ecf0f1;
+    transition: background-color .3s;
 }
-
 .gplmyplugnotactive{
-  display: inline-block;
-  color: #ffffff;
-  box-shadow: 0 0 5px -1px rgba(0,0,0,0.2);
-  vertical-align: middle;
-  max-width: 100px;
-  padding: 5px;
-  text-align: center;
-  background-color: #dc3232;
-  border-radius: 3px;
-  width: 100px;
-  height: 20px;
-  font-family: inherit;
-  font-weight: normal;
-  font-size: 14px;	
+   display: inline-block;
+    vertical-align: middle;
+   padding: 8px 20px;
+    text-align: center;
+    font-family: inherit;
+    font-weight: normal;
+    font-size: 14px;
+    border-width: 0;
+    outline: none;
+    border-radius: 2px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+    background-color: #f15151;
+    color: #ecf0f1;
+    transition: background-color .3s;
 }
 
+.wrap h1, .wrap h2
+{
+  font-size: 18px;
+  font-weight: 600;
+}
