@@ -30,7 +30,7 @@ class AdminCallbacks extends BaseController
 
 	public function gplAdminSection()
 	{
-		echo 'Enter your GPL Times username/email and password';
+		echo "<div class=\"gpllogin\">Enter your GPL Times username/email and password</div>";
 		
 	}
 
