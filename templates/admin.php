@@ -1,5 +1,5 @@
 
-<div class="wrap">
+<div class="wrapgpl">
 	<?php settings_errors(); ?>
 
 	
