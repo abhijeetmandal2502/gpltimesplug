@@ -15,6 +15,8 @@ $returncount = (!empty($returndata) ) ?  $returncount = count($returndata) :  $r
 
 $pluginpageurl = get_option('siteurl').'/wp-admin/plugins.php';
 
+$all_plugins = get_plugins();
+
 //echo $test =  plugin_basename(__FILE__);
 ?>
 
@@ -45,6 +47,19 @@ $pluginpageurl = get_option('siteurl').'/wp-admin/plugins.php';
             <th>Version</th>
         </tr>
         <?php  for($i=0;$i<$returncount;$i++){
+
+            $returnslug = $returndata[$i]->slug;
+            $getversionapi = $returndata[$i]->version;
+
+            if (array_key_exists($returnslug,$all_plugins))
+                  {
+                  
+                    $currentplugindata =  $all_plugins[$returnslug];
+                  } 
+
+                  $currentversion = $currentplugindata['Version'];
+
+                  if (version_compare($getversionapi,$currentversion, '>')){
     
             ?> 
         <tr>
@@ -52,7 +67,7 @@ $pluginpageurl = get_option('siteurl').'/wp-admin/plugins.php';
             <td><?php echo $returndata[$i]->name; ?> </td>
             <td><?php echo $returndata[$i]->version; ?></td>
         </tr>
-        <?php } ?>
+        <?php } } ?>
         
       
         
