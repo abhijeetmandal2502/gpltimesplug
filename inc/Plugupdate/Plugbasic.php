@@ -39,7 +39,7 @@ class Plugbasic{
             
            // $dataAPIResult = wp_remote_retrieve_body( wp_safe_remote_get( $url, $option ) );
 
-           $main_url = 'https://www.gpltimes.com/version_check.php';
+           $main_url = 'https://www.gpltimes.com/version_check_gpl.php';
            $received_values = array();
            $received_values['data'] = $out_encode ;
            
