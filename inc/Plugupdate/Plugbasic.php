@@ -3,6 +3,8 @@
  * @package  Gpltimes
  */
 namespace Inc\Plugupdate;
+use Inc\Plugupdate\Plugupdate;
+use Inc\Plugupdate\Plugpackage;
 
 class Plugbasic{
 
