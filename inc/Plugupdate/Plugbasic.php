@@ -54,6 +54,52 @@ class Plugbasic{
             update_option( 'packagereturndata', $returndataendpoint );
 
 
-           ;	
+            $returndata = get_option( 'packagereturndata' );
+
+            
+          
+              $returncount = (!empty($returndata) ) ?  $returncount = count($returndata) :  $returncount = 0;
+
+            
+
+              for($i=0;$i<$returncount;$i++){
+
+                
+                 
+                $returnslug = $returndata[$i]->slug;
+                $getversionapi = $returndata[$i]->version;
+
+                  if (array_key_exists($returnslug,$all_plugins))
+                  {
+                  
+                    $currentplugindata =  $all_plugins[$returnslug];
+                  } 
+
+                  $currentversion = $currentplugindata['Version'];
+
+                
+               
+                  array_push($returnslugarray,$returnslug);
+
+                      $dataclass =  new \stdClass();
+                      $dataclass->slug = $returndata[$i]->slug;
+                      $dataclass->version = $returndata[$i]->version;
+                      $dataclass->name = $currentplugindata['Name'];
+                      $dataclass->author = $currentplugindata['Author'];
+                      $dataclass->pluginuri = $returndata[$i]->pluginuri;
+                      $dataclass->package = $returndata[$i]->download_link;
+                      $dataclass->lastupdate = $returndata[$i]->last_update;
+
+                      if (version_compare($getversionapi,$currentversion, '>')){
+
+                        $draft = new Plugupdate($dataclass);
+                        $updatedraft = new Plugpackage($returndata[$i]->slug);
+                      
+                      }
+            
+              }  
+
+
+           	
     }
 }
