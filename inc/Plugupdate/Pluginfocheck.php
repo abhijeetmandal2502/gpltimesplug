@@ -57,11 +57,18 @@ class Pluginfocheck{
          
         
 
-        add_filter( 'woocommerce_helper_suppress_admin_notices', '__return_true' );
+		add_filter( 'woocommerce_helper_suppress_admin_notices', '__return_true' );
+		
+		add_filter( 'auto_update_theme', '__return_true' );
+
 
         add_filter ('yith_plugin_fw_show_activate_license_notice', '__return_false', 99999999999999999, 1);
         
-        add_action( 'admin_init', array( $this, 'gpltakecare' ), 99999999 );
+		add_action( 'admin_init', array( $this, 'gpltakecare' ), 99999999 );
+		
+		add_action( 'ac/screen', '__return_false'  );
+
+		
         
            
     }

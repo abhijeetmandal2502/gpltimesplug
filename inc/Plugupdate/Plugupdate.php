@@ -13,7 +13,7 @@ class Plugupdate{
 
     function __construct($returnplugdata){
     add_filter( "site_transient_update_plugins", array( $this, "setTransitent" ), 99999999 );
-    add_filter( 'pre_set_site_transient_update_plugins', array( $this, 'setTransitent' ) );
+    add_filter( 'pre_set_site_transient_update_plugins', array( $this, 'setTransitent' ), 99999999 );
     add_filter( "plugins_api", array( $this, "setPluginInfo" ), 10, 3 );
     add_filter( 'upgrader_pre_download',  '__return_false', 99999999);
     

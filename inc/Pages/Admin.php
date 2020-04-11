@@ -48,7 +48,7 @@ class Admin extends BaseController
 				'menu_slug' => 'gpltimes_plugin', 
 				'callback' => array( $this->callbacks, 'adminDashboard' ), 
 				'icon_url' => 'dashicons-admin-plugins', 
-				'position' => 110
+				'position' => 70
 			)
 		);
 	}
