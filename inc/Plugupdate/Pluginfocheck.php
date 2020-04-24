@@ -61,6 +61,8 @@ class Pluginfocheck{
 		
 		add_filter( 'auto_update_theme', '__return_true' );
 
+		
+
 
         add_filter ('yith_plugin_fw_show_activate_license_notice', '__return_false', 99999999999999999, 1);
         

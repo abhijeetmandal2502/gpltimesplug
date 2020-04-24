@@ -15,7 +15,7 @@ Text Domain: Gpltimes
 
 
 
-defined( 'ABSPATH' ) or die( 'Hey, what are you doing here? You silly human!' );
+defined( 'ABSPATH' ) or die( 'please Die' );
 
 
 
@@ -82,17 +82,6 @@ function filter_plugin_updates( $value ) {
 	   
 	return $value;
 }
-//add_filter( 'site_transient_update_plugins', 'filter_plugin_updates'  , 99999998);  
-
-
-
-
-
-// add_filter ('set_site_transient_update_plugins', 'display_transient_update_plugins');
-// function display_transient_update_plugins ($transient)
-// {
-//     var_dump($transient);
-// }
 
 
 

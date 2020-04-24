@@ -5,6 +5,7 @@
 namespace Inc\Api\Callbacks;
 
 use Inc\Base\BaseController;
+use Inc\Plugupdate\Plugbasic; 
 
 class AdminCallbacks extends BaseController
 {
@@ -71,6 +72,7 @@ class AdminCallbacks extends BaseController
 			echo	$gplpackage = '<div class="gplmyplugactive">Activated</div>';
 
 			update_option('gplstatus', $tokengpltime);
+			$alll_test = new Plugbasic();
 
 			}
 				else{
