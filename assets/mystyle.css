@@ -17,7 +17,7 @@ table.form-table {
     margin-top: 20px;
 }
 
-input[type=email], input[type=password], input[type=search], input[type=text]{
+.example-class input[type=email], input[type=password], input[type=search], input[type=text]{
     line-height: 2;
     min-height: 30px;
     -webkit-appearance: none;
@@ -35,10 +35,13 @@ input[type=email], input[type=password], input[type=search], input[type=text]{
     font-size: 15px;
 }
 
-label {
+.example-class label, .gplmystatus label {
     font-size: 15px;
     color: #333333;
     text-transform: uppercase;
+}
+a.status_active:active, a.status_active:focus, a.status_active:visited {
+    color: #ffffff;
 }
 
 table.updategpl {
