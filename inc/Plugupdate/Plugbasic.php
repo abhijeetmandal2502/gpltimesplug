@@ -16,6 +16,7 @@ class Plugbasic{
 
         $slugarray = [];
         $slugdetails = [];
+        $returnslugarray = [];
         $all_plugins = get_plugins();
 
 

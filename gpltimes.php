@@ -6,7 +6,7 @@
 Plugin Name: GPL Times
 Plugin URI: https://gpltimes.com/
 Description: GPLTimes Auto Updater 
-Version: 1.0.14
+Version: 1.0.15
 Author: Abhijeet Mandal
 Author URI: https://www.thenwguru.com/
 License: GPLv2 or later
