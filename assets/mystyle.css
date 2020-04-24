@@ -17,7 +17,7 @@ table.form-table {
     margin-top: 20px;
 }
 
-.example-class input[type=email], input[type=password], input[type=search], input[type=text]{
+.example-class input[type=email],.example-class input[type=password],.example-class input[type=search],.example-class input[type=text]{
     line-height: 2;
     min-height: 30px;
     -webkit-appearance: none;
