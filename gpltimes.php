@@ -69,8 +69,6 @@ $result_slug = get_option( 'gpldiffslug' );
 function filter_plugin_updates( $value ) {
 	$result_slug = get_option( 'gpldiffslug' );
 
-	print_r($result_slug);
-
 	if($result_slug != NULL){
 	foreach ($result_slug as $plugin) {
 		if ( isset( $value->response[$plugin] ) ) {
