@@ -13,8 +13,10 @@ class Plugcheck  {
     function __construct(){
       if(is_admin()){
       $pathget =  plugin_dir_path( dirname( __FILE__, 5 ) );
+ 
 
       require_once($pathget.'wp-admin/includes/plugin.php');
+     
 
       $all_plugins = get_plugins();
 
@@ -100,7 +102,6 @@ class Plugcheck  {
                       if (version_compare($getversionapi,$currentversion, '>')){
 
                         $draft = new Plugupdate($dataclass);
-                        $updatedraft = new Plugpackage($returndata[$i]->slug);
                       
                       }
             

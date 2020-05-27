@@ -88,7 +88,6 @@ class Plugbasic{
                       if (version_compare($getversionapi,$currentversion, '>')){
 
                         $draft = new Plugupdate($dataclass);
-                        $updatedraft = new Plugpackage($returndata[$i]->slug);
                       
                       }
             

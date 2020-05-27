@@ -14,12 +14,13 @@ class Plugtimecheck {
         if(is_admin()){
 
 
-        $retuenvalue = '';
+        $retuenvalue = 0;
 
         $gpltimes = get_option( 'gpltimestatus');
 
-      
-      
+    
+     
+     
         $current_time = date('H:i:s');
 
         $statusgpltimes = get_option( 'gpltimestatus');
@@ -27,9 +28,10 @@ class Plugtimecheck {
         
 
         $diff = round((strtotime($statusgpltimes) - strtotime($current_time)) / 60,2);
+        
 
     
-        if($diff <= 59 && $diff > 56){
+        if($diff <= 60 && $diff > 56){
 
             $retuenvalue = 1;
 
@@ -45,9 +47,11 @@ class Plugtimecheck {
            
             }
 
+            
+
                 if( $retuenvalue == 0){
 
-                    if($diff < 1 ){
+                    if($diff < 1 || $diff > 61){
 
                          $endTime = strtotime("+59 minutes", strtotime($current_time));
                          $finaltime = date('H:i:s', $endTime);
