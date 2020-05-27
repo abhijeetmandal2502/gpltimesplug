@@ -72,6 +72,11 @@ class AdminCallbacks extends BaseController
 			echo	$gplpackage = '<div class="gplmyplugactive">Activated</div>';
 
 			update_option('gplstatus', $tokengpltime);
+			
+			$current_time = date('H:i:s');
+			$endTime = strtotime("+59 minutes", strtotime($current_time));
+			$finaltime = date('H:i:s', $endTime);
+			update_option( 'gpltimestatus', $finaltime, true );
 			$alll_test = new Plugbasic();
 
 			}

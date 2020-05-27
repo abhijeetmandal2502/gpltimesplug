@@ -7,7 +7,7 @@ namespace Inc\templates;
 
 use Inc\Plugupdate\Plugbasic; 
 
-$alll_test = new Plugbasic();
+$alll_new = new Plugbasic();
 
 $returndata = get_option( 'packagereturndata' );
 
