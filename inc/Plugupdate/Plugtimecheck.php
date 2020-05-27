@@ -36,7 +36,7 @@ class Plugtimecheck {
             
 
         
-                if($diff <= 60 && $diff > 56){
+                if($diff <= 60 && $diff > 50){
 
                     $retuenvalue = 1;
 
