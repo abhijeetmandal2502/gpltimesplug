@@ -15,7 +15,7 @@ class RefreshUpdate extends BaseController
 
 	public function update_link( $links ) 
 	{
-		$update_link = '<a href="admin.php?page=gpltimes_manual_update_check">Manual update check</a>';
+		$update_link = '<a href="admin.php?page=gpltimes_manual_update_check">Check Update</a>';
 		array_push( $links, $update_link );
 		return $links;
 	}

@@ -28,7 +28,7 @@ $indexcount = 1;
     
     <?php if(!empty($returndata )){ ?>
     
-    <h2>Manual update check</h2>
+    <h2>Check Update</h2>
     
     <div align="left">
         <a class="status_active" href="<?php echo $pluginpageurl;?>">Go to Plugins Page</a>

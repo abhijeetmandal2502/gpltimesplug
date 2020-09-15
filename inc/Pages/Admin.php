@@ -67,8 +67,8 @@ class Admin extends BaseController
 
 			array(
 				'parent_slug' => 'gpltimes_plugin', 
-				'page_title' => 'Manual update check', 
-				'menu_title' => 'Manual update', 
+				'page_title' => 'Check Update', 
+				'menu_title' => 'Check Update', 
 				'capability' => 'manage_options', 
 				'menu_slug' => 'gpltimes_manual_update_check', 
 				'callback' => array( $this->callbacks, 'manualupdate' )
