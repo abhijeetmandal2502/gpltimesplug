@@ -50,7 +50,7 @@ class Plugcheck  {
                 $out_encode = base64_encode($out_final);
 
                 
-                $url = 'https://www.gpltimes.com/version_check.php';
+                $url = 'https://www.gpltimes.com/version-check-gpl.php';
                 $option =  array('timeout' => 30, 
                                   'body' => array( 'data' => $out_encode ),
                                 );
