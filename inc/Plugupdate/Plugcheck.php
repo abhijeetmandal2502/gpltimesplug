@@ -50,12 +50,10 @@ class Plugcheck  {
                 $out_encode = base64_encode($out_final);
 
                 
-                $url = 'https://www.gpltimes.com/version-check-gpl.php';
-                $option =  array('timeout' => 30, 
-                                  'body' => array( 'data' => $out_encode ),
-                                );
-                
-               $dataAPIResult = wp_remote_retrieve_body( wp_safe_remote_post( $url, $option ) );
+                $url = 'https://www.gpltimes.com/version_check.php?data='.$out_encode;
+                $option =  array('timeout' => 30,);
+            
+                $dataAPIResult = wp_remote_retrieve_body( wp_safe_remote_get( $url, $option ) );
 
                 $returndataendpoint = json_decode($dataAPIResult);
 
